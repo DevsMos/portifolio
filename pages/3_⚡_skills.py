@@ -2,39 +2,15 @@ import streamlit as st
 import time
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 import openpyxl
 st.set_page_config(page_title="Educação", page_icon="⚡")
 st.markdown("# 1° Exemplo de codigo Temperatura ")
 st.markdown("## Digite um valor entre 0 e 20 ")
 st.sidebar.header("Profissional")
-data =("0","15","20","30")
-data_list = list(data)
-data_counts = pd.Series(data_list).value_counts()
-x = data_counts.index.to_numpy()
-y = data_counts.to_numpy()
 
-col1,col2,col3 = st.columns(3) 
-with col1:
-     # Crie a figura
-    fig, ax = plt.subplots()
-
-# Crie o gráfico de barras
-    ax.bar(x, y)
-
-# Defina títulos e rótulos
-    ax.set_title("Temperatura")
-    ax.set_xlabel("Valores")
-    ax.set_ylabel("Frequência")
-
-# Mostre o gráfico no Streamlit
-    st.pyplot(fig)
-     
-
-with col2:
-     temp = st.number_input("Enter your temperature ")
-     col1 = st.write(f"Hello, the temperature now is , {temp}°C !")
+temp = st.number_input("Enter your temperature ")
+col1 = st.write(f"Hello, the temperature now is , {temp}°C !")
 
 if temp <= 4.99:
 
@@ -99,4 +75,3 @@ fig_date = px.bar(df_filtered, x="Canal de Vendas", y="Valor", color="Data Emiss
 
 # Exibir o gráfico na primeira coluna
 col1.plotly_chart(fig_date, use_container_width=True)
-
