@@ -2,7 +2,6 @@ import streamlit as st
 import time
 import numpy as np
 import pandas as pd
-import plotly.express as px
 import openpyxl
 st.set_page_config(page_title="Educação", page_icon="⚡")
 st.markdown("# 1° Exemplo de codigo Temperatura ")
